@@ -10,7 +10,7 @@ MAINTAINER Ashraf Sharif <ashraf@s9s.com>
 ENV PACKAGE percona-xtrabackup-23
 
 # apt-utils
-RUN apt-get install -y apt-utils
+RUN apt-get update && apt-get install -y apt-utils
 
 # Install requirement (wget)
 RUN apt-get update && apt-get install -y wget
