@@ -5,10 +5,17 @@ on: [push]
 jobs:
 
   build:
-
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v1
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      
+  built:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v1
+      - name: Bora ver se foi mermo
+        run: mkdir -p /storage/test-mysql/datadir && docker run -d --name=test-mysql -e MYSQL_ROOT_PASSWORD=’mypassword’ -v /storage/test-mysql/datadir:/var/lib/mysql mysql:5.6
