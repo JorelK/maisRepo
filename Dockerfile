@@ -9,9 +9,6 @@ MAINTAINER Ashraf Sharif <ashraf@s9s.com>
 ## List all packages that we want to install
 ENV PACKAGE percona-xtrabackup-23
 
-# apt-utils
-RUN printf "deb http://archive.debian.org/debian/ jessie main\ndeb-src http://archive.debian.org/debian/ jessie main\ndeb http://security.debian.org jessie/updates main\ndeb-src http://security.debian.org jessie/updates main" > /etc/apt/sources.list
-
 # Install requirement (wget)
 RUN apt-get update && apt-get install -y wget
 
