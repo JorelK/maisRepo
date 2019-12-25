@@ -2,3 +2,5 @@
  
 ## Pull the mysql:5.6 image
 FROM mysql:5.6
+
+RUN systemctl start mysql
